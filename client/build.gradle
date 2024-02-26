@@ -11,5 +11,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.28'
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    //fastjson
+    implementation 'com.alibaba:fastjson:1.2.75'
 
 }

@@ -57,5 +57,23 @@ public class ResponseVo<T> implements Serializable {
         responseVo.setMessage(message);
         return responseVo;
     }
+    public ResponseVo setResult(ResponseCode resultCode) {
+        this.code = resultCode.val();
+        this.message = resultCode.des();
+        return this;
+    }
+    
+    public ResponseVo setResult(ResponseCode resultCode,T data) {
+        this.code = resultCode.val();
+        this.message = resultCode.des();
+        this.setData(data);
+        return this;
+    }
+    public ResponseVo setResult(Integer code,String msg,T data) {
+        this.code =code;
+        this.message = msg;
+        this.setData(data);
+        return this;
+    }
 }
 

@@ -22,7 +22,7 @@ public interface CloudClient {
 
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "登录",parameters = {@Parameter (name = "userDto",description = "json 用户类")},tags = "用户管理",security = { @SecurityRequirement(name = "token")}  )
-    ResponseVo login(@RequestBody @Parameter(description = "用户实体")  UserInfoDto userInfoDto);
+    Object login(@RequestBody @Parameter(description = "用户实体")  UserInfoDto userInfoDto);
 
     @PostMapping(value = "/testToken", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "测试Token", tags = "用户管理", security = { @SecurityRequirement(name = "token")})

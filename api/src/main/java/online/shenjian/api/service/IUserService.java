@@ -14,5 +14,5 @@ import online.shenjian.client.common.ResponseVo;
  * @since 2023-11-06
  */
 public interface IUserService extends IService<UserModel> {
-    public ResponseVo login(UserInfoDto userDto);
+    public Object login(UserInfoDto userDto);
 }

@@ -9,6 +9,7 @@ import online.shenjian.api.mapper.UserMapper;
 import online.shenjian.client.cloud.dto.UserInfoDto;
 import online.shenjian.client.common.ResponseVo;
 import online.shenjian.api.service.IUserService;
+import online.shenjian.client.exception.UserNotExistException;
 import org.springframework.stereotype.Service;
 import online.shenjian.client.cloud.dto.Claims;
 import online.shenjian.api.util.TokenUtils;
@@ -29,7 +30,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserModel> implemen
     }
 
     @Override
-    public ResponseVo login(UserInfoDto userDto) {
+    public Object login(UserInfoDto userDto) {
         // 根据用户登录名获取用户实体
         QueryWrapper<UserModel> wrapper = new QueryWrapper<>();
         wrapper.eq("username", userDto.getUsername());
@@ -37,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserModel> implemen
         UserModel user = userMapper.selectOne(wrapper);
         // 判断是否存在该用户
         if (user == null) {
-            return ResponseVo.error(Utils.getI18n("user.login.error", null));
+            throw new UserNotExistException(1001, "用户不存在");
         }
 
         // 假设用户一定存在且密码正确
@@ -50,6 +51,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserModel> implemen
         String token = TokenUtils.buildToken(claims);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("token", token);
-        return ResponseVo.success(jsonObject);
+        return jsonObject;
     }
 }
