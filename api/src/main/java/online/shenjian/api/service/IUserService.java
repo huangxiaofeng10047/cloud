@@ -3,7 +3,6 @@ package online.shenjian.api.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import online.shenjian.api.entity.UserModel;
 import online.shenjian.client.cloud.dto.UserInfoDto;
-import online.shenjian.client.common.ResponseVo;
 
 /**
  * <p>

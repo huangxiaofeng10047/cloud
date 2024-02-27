@@ -3,8 +3,8 @@ package online.shenjian.api.config;
 import java.util.TreeMap;
 
 import lombok.extern.slf4j.Slf4j;
-import online.shenjian.client.common.ResponseCode;
-import online.shenjian.client.common.ResponseVo;
+import online.shenjian.common.ResponseCode;
+import online.shenjian.common.ResponseVo;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

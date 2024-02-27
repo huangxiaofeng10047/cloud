@@ -1,7 +1,7 @@
 package online.shenjian.api.config;
 import lombok.extern.slf4j.Slf4j;
-import online.shenjian.client.common.ResponseVo;
-import online.shenjian.client.common.ResultResponse;
+import online.shenjian.common.ResponseVo;
+import online.shenjian.common.ResultResponse;
 import online.shenjian.client.exception.UserNotExistException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;

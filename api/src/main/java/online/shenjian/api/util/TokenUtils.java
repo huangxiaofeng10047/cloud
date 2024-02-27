@@ -17,7 +17,7 @@ import com.nimbusds.jose.Payload;
 import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
 import online.shenjian.client.cloud.dto.Claims;
-import online.shenjian.client.common.RequestUtils;
+import online.shenjian.client.utils.RequestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
 
