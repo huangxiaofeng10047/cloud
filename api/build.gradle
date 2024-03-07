@@ -2,38 +2,41 @@ archivesBaseName = "api"
 
 bootJar.enabled = true
 configurations {
-    compile.exclude group:'org.slf4j.simple'
+    compile.exclude group: 'org.slf4j.simple'
+}
+def excludeSlf4jApi = {
+    it.exclude group: 'org.slf4j', module: 'slf4j-api'
 }
 dependencies {
 
-    implementation ('org.springframework.boot:spring-boot-starter'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('org.springframework.boot:spring-boot-starter') {
+        excludeSlf4jApi
     }
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
     //remove logback
-    implementation ('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-web')
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.apache.commons:commons-lang3:3.12.0'
 
-    implementation ('org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0') {
+        excludeSlf4jApi
     }
-    implementation ('org.springdoc:springdoc-openapi-starter-webmvc-api:2.2.0'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('org.springdoc:springdoc-openapi-starter-webmvc-api:2.2.0') {
+        excludeSlf4jApi
     }
-    implementation ('com.baomidou:mybatis-plus-boot-starter:3.5.3.1'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('com.baomidou:mybatis-plus-boot-starter:3.5.3.1') {
+        excludeSlf4jApi
     }
-    implementation ('com.baomidou:mybatis-plus-boot-starter-test:3.5.3.1'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('com.baomidou:mybatis-plus-boot-starter-test:3.5.3.1') {
+        excludeSlf4jApi
 
     }
     implementation 'com.alibaba:fastjson:2.0.35'
     implementation 'com.nimbusds:nimbus-jose-jwt:9.31'
 
     implementation 'com.mysql:mysql-connector-j'
-    implementation ('com.alibaba:druid-spring-boot-3-starter:1.2.18'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('com.alibaba:druid-spring-boot-3-starter:1.2.18') {
+        excludeSlf4jApi
     }
 
     implementation 'org.springframework.boot:spring-boot-starter-test'
@@ -54,13 +57,13 @@ dependencies {
 
     // 只是在代码生成测试阶段用
     testImplementation 'com.baomidou:mybatis-plus-generator:3.5.3.1'
-    implementation ('org.apache.velocity:velocity-engine-core:2.3'){
-        exclude group: "org.slf4j", module: "slf4j-api"
+    implementation('org.apache.velocity:velocity-engine-core:2.3') {
+        excludeSlf4jApi
     }
     //spring-boot-starter-validation
-     implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     //添加通义千问SDK
-    implementation ('com.alibaba:dashscope-sdk-java:2.8.2'){
+    implementation('com.alibaba:dashscope-sdk-java:2.8.2') {
         exclude group: "org.slf4j", module: "slf4j-api";
         exclude group: "org.slf4j", module: "slf4j-simple"
     }
