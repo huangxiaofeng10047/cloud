@@ -49,8 +49,8 @@ public class SecurityConfiguration {
                 // OPTIONS请求全部放行
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 // 放行接口
-                .requestMatchers("/login").permitAll()
-                .requestMatchers("/register").permitAll()
+                .requestMatchers("/login").permitAll().requestMatchers("/events/**").permitAll()
+                    .requestMatchers("/register").permitAll()
                 .requestMatchers("/verifyCode").permitAll()
                 .requestMatchers("/user/resetPassword").permitAll()
                 // 放行Swagger页面

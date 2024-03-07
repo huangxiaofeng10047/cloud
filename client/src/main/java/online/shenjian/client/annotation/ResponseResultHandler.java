@@ -1,8 +1,8 @@
 package online.shenjian.client.annotation;
 import com.alibaba.fastjson.JSON;
 import jakarta.servlet.http.HttpServletRequest;
-import online.shenjian.client.common.ResponseVo;
-import online.shenjian.client.common.ResultResponse;
+import online.shenjian.common.ResponseVo;
+import online.shenjian.common.ResultResponse;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
