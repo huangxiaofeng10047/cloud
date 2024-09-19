@@ -22,7 +22,7 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 api:
-  key: xxxxxx
+  key:
 aliyunOss:
   file:
     subDir: dev/sfxs

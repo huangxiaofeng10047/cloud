@@ -74,6 +74,8 @@ spring:
         url-pattern: /*
       db-type: mysql
       driver-class-name: com.mysql.cj.jdbc.Driver
+  config:
+    import: optional:classpath:.env[.properties]
 mybatis-plus:
   global-config:
     db-config:
@@ -90,4 +92,4 @@ aliyunOss:
     bucketName: sfxs
 ai:
   zhipu:
-    apiKey: 618edb108b1ff13831d3.rAMMkwblZiOzF0dz
+    apiKey: ${API_TOKEN}

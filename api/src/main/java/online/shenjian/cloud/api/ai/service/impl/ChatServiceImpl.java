@@ -1,5 +1,8 @@
 package online.shenjian.cloud.api.ai.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.zhipu.oapi.ClientV4;
 import com.zhipu.oapi.Constants;
 import com.zhipu.oapi.service.v4.model.*;
@@ -34,7 +37,11 @@ public class ChatServiceImpl implements ChatService {
                 .build();
         ModelApiResponse modelApiResponse = clientV4.invokeModelApi(chatCompletionRequest);
         if (modelApiResponse.isSuccess()) {
+//            System.out.println(modelApiResponse.getData().getChoices().get(0).getMessage().getContent());
+//            JSONObject responesData= JSON.parseObject( (String) modelApiResponse.getData().getChoices().get(0).getMessage().getContent());
+//            JSONArray content2=(JSONArray) responesData.get("content");
             return modelApiResponse.getData().getChoices().get(0).getMessage().getContent();
+            
         }
         return "";
     }
