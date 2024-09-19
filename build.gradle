@@ -7,7 +7,7 @@ plugins {
 
 archivesBaseName = "cloud-api"
 
-bootJar.enabled = true
+bootJar.enabled = false
 
 // 版本信息
 ext {
@@ -47,4 +47,5 @@ subprojects {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
         }
     }
+
 }
