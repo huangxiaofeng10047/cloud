@@ -5,3 +5,5 @@ include 'client'
 include 'common'
 include 'cjs-auth-service'
 include 'cjs-gateway'
+include 'api'
+

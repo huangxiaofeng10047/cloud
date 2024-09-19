@@ -68,4 +68,10 @@ dependencies {
         exclude group: "org.slf4j", module: "slf4j-simple"
     }
     implementation 'io.projectreactor:reactor-core:3.4.6'
+    implementation 'org.apache.velocity:velocity-engine-core:2.3'
+
+    // 阿里云OSS存储
+    implementation 'com.aliyun.oss:aliyun-sdk-oss:3.10.2'
+    implementation 'cn.bigmodel.openapi:oapi-java-sdk:release-V4-2.0.2'
+
 }

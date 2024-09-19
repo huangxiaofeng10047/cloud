@@ -1,3 +1,4 @@
+
  spring:
      cloud:
        gateway:
@@ -8,3 +9,6 @@
                - MyLog=true
              predicates:
                - Path=/auth-server/**
+
+ server:
+   port: 8089
