@@ -41,7 +41,13 @@ public class SseServer {
         SseEmitter emitter = EMITTERS.get(account);
         if (emitter != null) {
             try {
-                emitter.send(message);
+                if (message.contains("```")){
+                    System.out.println(message);
+                }
+                emitter.send(SseEmitter.event()
+                        .name("message").data(message.replace("\n","\ndata: "))
+                );
+//                emitter.send(message);
             } catch (IOException e) {
                 EMITTERS.remove(account);
                 emitter.completeWithError(e);
