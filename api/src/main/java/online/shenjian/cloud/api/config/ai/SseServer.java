@@ -45,7 +45,7 @@ public class SseServer {
                     System.out.println(message);
                 }
                 emitter.send(SseEmitter.event()
-                        .name("message").data(message.replace("\n","\ndata: "))
+                        .name("message").data(message.replaceAll(" ","&#32;").replace("\n","\ndata: "))
                 );
 //                emitter.send(message);
             } catch (IOException e) {
